@@ -1,0 +1,17 @@
+args:
+  name:
+  - ir-a-survival
+  bungee:
+  - survival
+  triggerblock:
+  - NETHER_PORTAL
+maxLoc:
+  posX: 179
+  posY: 41
+  posZ: -176
+  worldName: world
+minLoc:
+  posX: 179
+  posY: 34
+  posZ: -178
+  worldName: world

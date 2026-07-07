@@ -1,0 +1,2 @@
+&fBienvenido al servidor, &e{PLAYER}&f.
+&fDisfruta de tu aventura, construye y diviértete.

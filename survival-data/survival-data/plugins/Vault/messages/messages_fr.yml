@@ -1,0 +1,306 @@
+# Messages en français
+pay:
+  # Messages de commande attendus par le code
+  only_players: "Seuls les joueurs peuvent utiliser /pay."
+  no_permission: "Vous n'avez pas l'autorisation d'utiliser /pay."
+  invalid_amount: "Montant invalide."
+  player_offline: "Le joueur %player% est hors ligne; demande non livrée."
+  amount_too_small: "Le montant doit être au moins %min%"
+  amount_too_large: "Le montant doit être au maximum %max%"
+  not_enough_money: "Fonds insuffisants."
+  withdraw_failed: "Impossible de retirer."
+  sent_ok: "Vous avez payé %amount% à %player%"
+  received_ok: "Vous avez reçu %amount% de %player%"
+
+  # UI/menu et autres messages
+  menu:
+    title_main: "Sélectionner un joueur"
+    title_player: "Actions : %player%"
+    nav:
+      prev_name: "&aPage précédente"
+      next_name: "&aPage suivante"
+    item:
+      pay: "Payer"
+      loan: "Prêt"
+      view_balance: "Voir le solde"
+      view_balance_lore: "Solde: %vault_balance_formatted%"
+      charge: "Facturer"
+      settings: "&cParamètres"
+    lore:
+      settings:
+        - "&7Ouvrir les paramètres de Vault."
+      pay:
+        - "&7Payer ce joueur."
+      loan:
+        - "&7Ouvrir votre menu de prêts."
+      view_balance:
+        - "&7Afficher le solde actuel."
+      charge:
+        - "&7Envoyer une demande de paiement."
+  prompt:
+    enter_amount_pay: "Tapez le montant à payer à %player% dans le chat, ou '%cancel%'."
+    enter_amount_charge: "Tapez le montant que vous voulez facturer à %player% dans le chat, ou '%cancel%'."
+    cancel_words: "annuler,cancel,cancelar"
+  error:
+    player_not_found: "Joueur introuvable : %player%"
+    invalid_amount: "Montant invalide."
+    positive_only: "Le montant doit être positif."
+    min_amount: "Le montant doit être au moins %min%"
+    max_amount: "Le montant doit être au maximum %max%"
+    insufficient_funds: "Fonds insuffisants."
+    withdraw_error: "Impossible de retirer : %error%"
+    deposit_error: "Impossible de déposer : %error%"
+  success:
+    sender: "Vous avez payé %amount% à %player%"
+
+  view:
+    balance: "Solde de %player% : %amount%"
+    money_label: "Argent"
+  request:
+    prefix: "Demande de paiement préparée : "
+    click: "Cliquez ici pour payer %player% %amount_formatted%"
+    hover: "Exécuter /pay %player% %amount%"
+    sent: "Demande envoyée à %player% pour %amount_formatted%."
+    stored: "Demande stockée; sera livrée quand %player% se connecte."
+  pending:
+    header: "Vous avez %count% demandes de paiement en attente."
+    limit_notice: "Affichage de %shown% sur %total%; le reste sera livré plus tard."
+
+cmd:
+  pay:
+    only_players: "Seuls les joueurs peuvent utiliser /pay."
+    no_permission: "Vous n'avez pas l'autorisation d'utiliser /pay."
+    usage: "Utilisation : /pay <joueur> <montant> (ou /pay pour ouvrir le menu, /pay <joueur> ouvre le sous-menu)"
+    player_not_found: "Joueur introuvable : %player%"
+    invalid_amount: "Montant invalide : %amount%"
+    positive_only: "Le montant doit être positif."
+  balance:
+    only_players: "Cette commande est réservée aux joueurs."
+    no_permission: "Vous n'avez pas l'autorisation d'utiliser /balance."
+    your_balance: "Votre solde : %amount%"
+  vault:
+    no_permission: "Vous n'avez pas l'autorisation de recharger le plugin."
+  eco:
+    usage: "Utilisation : /eco give <joueur> <montant> | /eco take <joueur> <montant>"
+    no_permission: "Vous n'avez pas l'autorisation d'utiliser /eco."
+    player_not_found: "Joueur introuvable : %player%"
+    invalid_amount: "Montant invalide : %amount%"
+    positive_only: "Le montant doit être positif."
+    deposit_ok: "Donné %amount% à %player%."
+    withdraw_ok: "Retiré %amount% de %player%."
+    deposit_error: "Impossible de déposer : %error%"
+    withdraw_error: "Impossible de retirer : %error%"
+
+# Clés attendues par le service de menu (niveau supérieur)
+menu:
+  title_main: "Sélectionner un joueur"
+  title_player: "Actions : %player%"
+  target_player: "Sélectionner la cible"
+  target_player_lore: "Cliquez pour choisir un joueur"
+  enter_amount: "Entrer le montant"
+  enter_amount_lore: "Tapez le montant dans le chat"
+
+# Clés attendues par la commande balance (niveau supérieur)
+balance:
+  no_permission: "Vous n'avez pas l'autorisation d'utiliser /balance."
+  your_balance: "Votre solde : %amount%"
+
+plugin:
+  enabled: "Économie interne enregistrée sans dépendre de Vault.jar"
+  disabled: "Vault (économie interne) désactivé."
+  reloaded: "Configuration et messages rechargés (langue : %lang%)."
+
+prefix: "&b[Vault]&r "
+
+top:
+  unknown_player: "Joueur"
+
+vaultop:
+  no_permission: "Vous n'avez pas l'autorisation d'utiliser /vaultop."
+  top_unavailable: "Le top n'est pas disponible avec le fournisseur d'économie actuel."
+  top_header: "&6Top argent &7(Page %page%/%pages%) :"
+  no_data: "&7Aucune donnée de solde pour le moment."
+
+vault:
+  menu:
+    title: "&bMenu Vault"
+    item:
+      pay: "&aPayer"
+      loan: "&aPret"
+      settings: "&cParamètres"
+      reload: "&eRecharger"
+      update: "&bMise a jour"
+    lore:
+      pay:
+        - "&7Ouvrir le menu de paiement."
+      loan:
+        - "&7Demander, voir et payer des prêts."
+      settings:
+        - "&7Modifier les paramètres du plugin."
+      reload:
+        - "&7Recharger la config et les messages."
+      update:
+        - "&7Vérifier les mises à jour."
+
+settings:
+  title: "&cParamètres"
+  title_loans: "&cParamètres Prêt"
+  title_pay: "&cParamètres Paiement"
+  title_texts: "&cParamètres Textes"
+  item:
+    loans: "&aPrêts"
+    pay: "&aPaiements"
+    texts: "&aTextes"
+    back: "&7Retour"
+  lore:
+    loans:
+      - "&7Configurer le système de prêts."
+    pay:
+      - "&7Configurer les limites et le menu /pay."
+    texts:
+      - "&7Modifier les textes des menus."
+    back:
+      - "&7Revenir en arrière."
+    loans_enabled:
+      - "&7Activer/désactiver les prêts."
+    loans_min:
+      - "&7Montant minimum d'un prêt."
+    loans_max:
+      - "&7Montant maximum d'un prêt."
+    loans_max_installments:
+      - "&7Nombre maximum de versements."
+    loans_default_interval_hours:
+      - "&7Heures par défaut entre les versements."
+    loans_charge_check_seconds:
+      - "&7Fréquence de traitement des prélèvements."
+    loans_max_missed:
+      - "&7Nombre d'échecs avant défaut."
+    pay_min:
+      - "&7Montant minimum autorisé."
+    pay_max:
+      - "&7Montant maximum autorisé."
+    pay_menu_size:
+      - "&7Taille du menu /pay (multiple de 9)."
+    pay_show_self:
+      - "&7Afficher votre tête dans /pay."
+  loans:
+    enabled: "&fPrêts"
+    min: "&fMin prêt"
+    max: "&fMax prêt"
+    max_installments: "&fMax versements"
+    default_interval_hours: "&fIntervalle par défaut (h)"
+    charge_check_seconds: "&fVérif. prélèvement (s)"
+    max_missed: "&fMax échecs"
+  pay:
+    min: "&fMin paiement"
+    max: "&fMax paiement"
+    menu_size: "&fTaille menu /pay"
+    show_self: "&fAfficher moi"
+  prompt:
+    value: "Tapez la nouvelle valeur pour %key% dans le chat, ou '%cancel%'."
+    text: "Tapez le nouveau texte pour %key% dans le chat, ou '%cancel%'."
+  cancelled: "Modification annulée."
+  invalid_number: "Nombre invalide."
+  saved: "Enregistré: %key%"
+  save_failed: "Impossible d'enregistrer le fichier."
+
+loan:
+  no_permission: "Vous n'avez pas la permission d'utiliser les prets."
+  none: "Vous n'avez aucun pret actif."
+  already_active: "Vous avez deja un pret actif."
+  cancelled: "Action de pret annulee."
+  created: "Pret cree : %amount% | versements : %installments% | versement : %installment_amount% | toutes les %interval_hours%h"
+  paid: "Votre pret est entierement rembourse."
+  status: "Pret : principal %principal% | restant %remaining% | versement %installment% | versements restants %installments_left% | prochain prelevement dans %next_in_minutes%m"
+  menu:
+    title: "&aPret"
+    item:
+      request: "&aDemander"
+      status: "&eStatut"
+      pay: "&6Payer"
+      settings: "&cParamètres"
+    lore:
+      request:
+        - "&7Demander un nouveau prêt."
+      status:
+        - "&7Voir l'état de votre prêt."
+      pay:
+        - "&7Payer votre prêt."
+      settings:
+        - "&7Ouvrir les paramètres de prêt."
+  request:
+    title:
+      type: "&aDemande de prêt"
+      delay: "&eDélai total"
+      installments_mode: "&eMode de versements"
+      installments_count: "&eNombre de versements"
+      interval: "&eIntervalle"
+      first_delay: "&ePremier versement"
+    item:
+      total: "&eTotal"
+      installments: "&aVersements"
+      mode_count: "&eNombre"
+      mode_amount: "&eMontant"
+      same_as_interval: "&eMême que l'intervalle"
+      back: "&7Retour"
+      cancel: "&cAnnuler"
+    lore:
+      total:
+        - "&7Paiement unique."
+      installments:
+        - "&7Paiements en plusieurs fois."
+      mode_count:
+        - "&7Choisir le nombre de versements."
+      mode_amount:
+        - "&7Saisir le montant dans le chat."
+      installments_count:
+        - "&7Sélectionner le nombre de versements."
+      delay:
+        - "&7Sélectionner le délai en heures."
+      interval:
+        - "&7Sélectionner l'intervalle entre versements."
+      first_delay:
+        - "&7Sélectionner le délai du premier versement."
+      back:
+        - "&7Revenir en arrière."
+      cancel:
+        - "&7Annuler la demande."
+  prompt:
+    cancel_words: "annuler,cancel,cancelar"
+    amount: "Tapez le montant du pret dans le chat, ou '%cancel%'."
+    type: "Tapez 'total' (paiement unique) ou 'versements', ou '%cancel%'."
+    total_delay_hours: "Dans combien d'heures le serveur doit-il prelever le paiement total ? (exemple : 24) Ou '%cancel%'."
+    installments_mode: "Tapez 'nombre' (nombre de versements) ou 'montant' (montant par versement), ou '%cancel%'."
+    installments_count: "Combien de versements ? Ou '%cancel%'."
+    installment_amount: "Tapez le montant de chaque versement. Ou '%cancel%'."
+    interval_hours: "Intervalle entre les versements en heures (0 = valeur par defaut %default_hours%). Ou '%cancel%'."
+    first_delay_hours: "Premier versement dans combien d'heures ? (0 = meme intervalle %default_hours%). Ou '%cancel%'."
+    pay_amount: "Tapez combien vous voulez payer (ou 'all'). Restant : %remaining%. Ou '%cancel%'."
+  error:
+    invalid_number: "Nombre invalide."
+    invalid_type: "Type invalide. Utilisez 'total' ou 'versements'."
+    invalid_installments_mode: "Option invalide. Utilisez 'nombre' ou 'montant'."
+    too_small: "Le pret doit etre d'au moins %min%."
+    too_large: "Le pret doit etre d'au plus %max%."
+    too_many_installments: "Trop de versements. Maximum : %max%."
+    not_enough_money: "Fonds insuffisants pour payer."
+    deposit_failed: "Impossible de creer le pret (echec du depot)."
+  pay:
+    success: "Paiement recu : %amount%. Restant : %remaining%."
+  charge:
+    success: "Versement preleve : %amount%. Restant : %remaining%."
+    missed: "Le versement n'a pas pu etre preleve (%amount%). Echecs %missed%/%max_missed%."
+    defaulted: "Pret en defaut. Restant : %remaining%."
+
+economy:
+  eco:
+    usage: "Utilisation : /eco give <joueur> <montant> | /eco take <joueur> <montant>"
+    no_permission: "Vous n'avez pas l'autorisation d'utiliser /eco."
+    player_not_found: "Joueur introuvable : %player%"
+    invalid_amount: "Montant invalide : %amount%"
+    positive_only: "Le montant doit être positif."
+    deposit_ok: "Ajouté %amount% à %player%."
+    withdraw_ok: "Retiré %amount% à %player%."
+    deposit_error: "Impossible de déposer : %error%"
+    withdraw_error: "Impossible de retirer : %error%"
+  bank_not_supported: "Support bancaire non implémenté"

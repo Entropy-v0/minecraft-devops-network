@@ -1,0 +1,295 @@
+# Russian messages (Русский)
+pay:
+  # Command messages expected by code
+  only_players: "Только игроки могут использовать /pay."
+  no_permission: "У вас нет прав для использования /pay."
+  invalid_amount: "Неверная сумма."
+  player_offline: "Игрок %player% оффлайн; запрос не доставлен."
+  amount_too_small: "Сумма должна быть не менее %min%"
+  amount_too_large: "Сумма должна быть не более %max%"
+  not_enough_money: "Недостаточно средств."
+  withdraw_failed: "Не удалось снять средства."
+  sent_ok: "Вы заплатили %amount% игроку %player%"
+  received_ok: "Вы получили %amount% от игрока %player%"
+
+  # UI/menu and other messages
+  menu:
+    title_main: "Выберите игрока"
+    title_player: "Действия: %player%"
+    nav:
+      prev_name: "&aПредыдущая страница"
+      next_name: "&aСледующая страница"
+    item:
+      pay: "Заплатить"
+      loan: "Кредит"
+      view_balance: "Посмотреть баланс"
+      view_balance_lore: "Баланс: %vault_balance_formatted%"
+      charge: "Запросить оплату"
+      settings: "&cНастройки"
+    lore:
+      settings:
+        - "&7Открыть настройки Vault."
+      pay:
+        - "&7Заплатить этому игроку."
+      loan:
+        - "&7Открыть меню кредита."
+      view_balance:
+        - "&7Показать текущий баланс."
+      charge:
+        - "&7Отправить запрос на оплату."
+  prompt:
+    enter_amount_pay: "Введите сумму для оплаты игроку %player% в чат, или '%cancel%'."
+    enter_amount_charge: "Введите сумму, которую хотите запросить у игрока %player% в чат, или '%cancel%'."
+    cancel_words: "отмена,cancel,cancelar"
+  error:
+    player_not_found: "Игрок не найден: %player%"
+    invalid_amount: "Неверная сумма."
+    positive_only: "Сумма должна быть положительной."
+    min_amount: "Сумма должна быть не менее %min%"
+    max_amount: "Сумма должна быть не более %max%"
+    insufficient_funds: "Недостаточно средств."
+    withdraw_error: "Не удалось снять: %error%"
+    deposit_error: "Не удалось внести: %error%"
+    player_offline: "Игрок %player% оффлайн; запрос не доставлен."
+  success:
+    sender: "Вы заплатили %amount% игроку %player%"
+
+  view:
+    balance: "Баланс игрока %player%: %amount%"
+    money_label: "Деньги"
+  request:
+    prefix: "Запрос на оплату подготовлен: "
+    click: "Нажмите здесь, чтобы заплатить %player% %amount_formatted%"
+    hover: "Выполнить /pay %player% %amount%"
+    sent: "Запрос отправлен игроку %player% на сумму %amount_formatted%."
+    stored: "Запрос сохранен; будет доставлен, когда %player% зайдет на сервер."
+  pending:
+    header: "У вас %count% ожидающих запросов на оплату."
+    limit_notice: "Показано %shown% из %total%; остальные будут доставлены позже."
+
+cmd:
+  pay:
+    only_players: "Только игроки могут использовать /pay."
+    no_permission: "У вас нет прав для использования /pay."
+    usage: "Использование: /pay <игрок> <сумма> (или /pay для открытия меню, /pay <игрок> открывает подменю)"
+    player_not_found: "Игрок не найден: %player%"
+    invalid_amount: "Неверная сумма: %amount%"
+    positive_only: "Сумма должна быть положительной."
+  balance:
+    only_players: "Эта команда только для игроков."
+    no_permission: "У вас нет прав для использования /balance."
+    your_balance: "Ваш баланс: %amount%"
+  vault:
+    no_permission: "У вас нет прав для перезагрузки плагина."
+
+# Keys expected by menu service (top-level)
+menu:
+  title_main: "Выберите игрока"
+  title_player: "Действия: %player%"
+  target_player: "Выберите цель"
+  target_player_lore: "Нажмите, чтобы выбрать игрока"
+  enter_amount: "Введите сумму"
+  enter_amount_lore: "Введите сумму в чат"
+
+# Keys expected by balance command (top-level)
+balance:
+  no_permission: "У вас нет прав для использования /balance."
+  your_balance: "Ваш баланс: %amount%"
+
+plugin:
+  enabled: "Внутренняя экономика зарегистрирована без зависимости от Vault.jar"
+  disabled: "Vault (внутренняя экономика) отключен."
+  reloaded: "Конфигурация и сообщения перезагружены (язык: %lang%)."
+
+prefix: "&b[Vault]&r "
+
+top:
+  unknown_player: "Игрок"
+
+vaultop:
+  no_permission: "У вас нет прав использовать /vaultop."
+  top_unavailable: "Топ недоступен с текущим провайдером экономики."
+  top_header: "&6Топ денег &7(Страница %page%/%pages%):"
+  no_data: "&7Пока нет данных о балансах."
+
+vault:
+  menu:
+    title: "&bМеню Vault"
+    item:
+      pay: "&aPay"
+      loan: "&aКредит"
+      settings: "&cНастройки"
+      reload: "&eПерезагрузить"
+      update: "&bОбновить"
+    lore:
+      pay:
+        - "&7Открыть меню платежей."
+      loan:
+        - "&7Запросить, посмотреть и оплатить кредит."
+      settings:
+        - "&7Изменить настройки плагина."
+      reload:
+        - "&7Перезагрузить конфиг и сообщения."
+      update:
+        - "&7Проверить обновления."
+
+settings:
+  title: "&cНастройки"
+  title_loans: "&cНастройки кредита"
+  title_pay: "&cНастройки Pay"
+  title_texts: "&cНастройки текста"
+  item:
+    loans: "&aКредиты"
+    pay: "&aPay"
+    texts: "&aТексты"
+    back: "&7Назад"
+  lore:
+    loans:
+      - "&7Настроить систему кредитов."
+    pay:
+      - "&7Настроить лимиты и меню /pay."
+    texts:
+      - "&7Редактировать тексты меню."
+    back:
+      - "&7Назад."
+    loans_enabled:
+      - "&7Включить/выключить кредиты."
+    loans_min:
+      - "&7Минимальная сумма кредита."
+    loans_max:
+      - "&7Максимальная сумма кредита."
+    loans_max_installments:
+      - "&7Максимум платежей."
+    loans_default_interval_hours:
+      - "&7Часы по умолчанию между платежами."
+    loans_charge_check_seconds:
+      - "&7Как часто обрабатывать списания."
+    loans_max_missed:
+      - "&7Сколько пропусков до дефолта."
+    pay_min:
+      - "&7Минимальная сумма оплаты."
+    pay_max:
+      - "&7Максимальная сумма оплаты."
+    pay_menu_size:
+      - "&7Размер меню /pay (кратно 9)."
+    pay_show_self:
+      - "&7Показывать себя в /pay."
+  loans:
+    enabled: "&fКредиты"
+    min: "&fМин кредит"
+    max: "&fМакс кредит"
+    max_installments: "&fМакс платежей"
+    default_interval_hours: "&fИнтервал по умолчанию (ч)"
+    charge_check_seconds: "&fПроверка (с)"
+    max_missed: "&fМакс пропусков"
+  pay:
+    min: "&fМин оплата"
+    max: "&fМакс оплата"
+    menu_size: "&fРазмер меню /pay"
+    show_self: "&fПоказывать себя"
+  prompt:
+    value: "Введите новое значение для %key% в чат, или '%cancel%'."
+    text: "Введите новый текст для %key% в чат, или '%cancel%'."
+  cancelled: "Редактирование отменено."
+  invalid_number: "Неверное число."
+  saved: "Сохранено: %key%"
+  save_failed: "Не удалось сохранить файл."
+
+loan:
+  no_permission: "У вас нет прав для использования кредитов."
+  none: "У вас нет активного кредита."
+  already_active: "У вас уже есть активный кредит."
+  cancelled: "Действие с кредитом отменено."
+  created: "Кредит создан: %amount% | платежей: %installments% | платеж: %installment_amount% | каждые %interval_hours%ч"
+  paid: "Ваш кредит полностью погашен."
+  status: "Кредит: сумма %principal% | осталось %remaining% | платеж %installment% | осталось платежей %installments_left% | следующее списание через %next_in_minutes%м"
+  menu:
+    title: "&aКредит"
+    item:
+      request: "&aЗапросить"
+      status: "&eСтатус"
+      pay: "&6Оплатить"
+      settings: "&cНастройки"
+    lore:
+      request:
+        - "&7Запросить новый кредит."
+      status:
+        - "&7Посмотреть статус кредита."
+      pay:
+        - "&7Оплатить кредит."
+      settings:
+        - "&7Открыть настройки кредита."
+  request:
+    title:
+      type: "&aЗаявка на кредит"
+      delay: "&eЗадержка оплаты"
+      installments_mode: "&eРежим платежей"
+      installments_count: "&eКоличество платежей"
+      interval: "&eИнтервал"
+      first_delay: "&eПервый платеж"
+    item:
+      total: "&eTotal"
+      installments: "&aПлатежи"
+      mode_count: "&eКоличество"
+      mode_amount: "&eСумма"
+      same_as_interval: "&eКак интервал"
+      back: "&7Назад"
+      cancel: "&cОтмена"
+    lore:
+      total:
+        - "&7Разовый платеж."
+      installments:
+        - "&7Платежи частями."
+      mode_count:
+        - "&7Выбрать количество платежей."
+      mode_amount:
+        - "&7Ввести сумму в чат."
+      installments_count:
+        - "&7Выберите количество платежей."
+      delay:
+        - "&7Выберите задержку в часах."
+      interval:
+        - "&7Выберите часы между платежами."
+      first_delay:
+        - "&7Выберите задержку первого платежа."
+      back:
+        - "&7Назад."
+      cancel:
+        - "&7Отменить заявку."
+  prompt:
+    cancel_words: "отмена,cancel,cancelar"
+    amount: "Введите сумму кредита в чат, или '%cancel%'."
+    type: "Введите 'total' (разовый платеж) или 'рассрочка', или '%cancel%'."
+    total_delay_hours: "Через сколько часов сервер должен списать полную оплату? (пример: 24) Или '%cancel%'."
+    installments_mode: "Введите 'количество' (число платежей) или 'сумма' (сумма каждого платежа), или '%cancel%'."
+    installments_count: "Сколько платежей? Или '%cancel%'."
+    installment_amount: "Введите сумму каждого платежа. Или '%cancel%'."
+    interval_hours: "Интервал между платежами в часах (0 = по умолчанию %default_hours%). Или '%cancel%'."
+    first_delay_hours: "Через сколько часов первый платеж? (0 = тот же интервал %default_hours%). Или '%cancel%'."
+    pay_amount: "Введите, сколько вы хотите оплатить (или 'all'). Осталось: %remaining%. Или '%cancel%'."
+  error:
+    invalid_number: "Неверное число."
+    invalid_type: "Неверный тип. Используйте 'total' или 'рассрочка'."
+    invalid_installments_mode: "Неверный вариант. Используйте 'количество' или 'сумма'."
+    too_small: "Сумма кредита должна быть не менее %min%."
+    too_large: "Сумма кредита должна быть не более %max%."
+    too_many_installments: "Слишком много платежей. Максимум: %max%."
+    not_enough_money: "Недостаточно средств для оплаты."
+    deposit_failed: "Не удалось создать кредит (ошибка зачисления)."
+  pay:
+    success: "Платеж получен: %amount%. Осталось: %remaining%."
+  charge:
+    success: "Платеж списан: %amount%. Осталось: %remaining%."
+    missed: "Не удалось списать платеж (%amount%). Пропуски %missed%/%max_missed%."
+    defaulted: "Кредит просрочен. Осталось: %remaining%."
+
+economy:
+  bank_not_supported: "Поддержка банков не реализована"
+  eco:
+    usage: "Использование: /eco give <игрок> <сумма> | /eco take <игрок> <сумма>"
+    no_permission: "У вас нет прав для использования /eco."
+    player_not_found: "Игрок не найден: %player%"
+    invalid_amount: "Неверная сумма: %amount%"
+    positive_only: "Сумма должна быть положительной."
+    deposit_ok: "Добавлено %amount% игроку %player%."
+    withdraw_ok: "Снято %amount% у игрока %player%."

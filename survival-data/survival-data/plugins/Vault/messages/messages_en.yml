@@ -1,0 +1,298 @@
+# English messages
+pay:
+  # Command messages expected by code
+  only_players: "Only players can use /pay."
+  no_permission: "You do not have permission to use /pay."
+  invalid_amount: "Invalid amount."
+  player_offline: "Player %player% is offline; request not delivered."
+  amount_too_small: "Amount must be at least %min%"
+  amount_too_large: "Amount must be at most %max%"
+  not_enough_money: "Insufficient funds."
+  withdraw_failed: "Could not withdraw."
+  sent_ok: "You paid %amount% to %player%"
+  received_ok: "You received %amount% from %player%"
+
+  # UI/menu and other messages
+  menu:
+    title_main: "Select player"
+    title_player: "Actions: %player%"
+    nav:
+      prev_name: "&aPrevious page"
+      next_name: "&aNext page"
+    item:
+      pay: "Pay"
+      loan: "Loan"
+      view_balance: "View balance"
+      view_balance_lore: "Balance: %vault_balance_formatted%"
+      charge: "Charge"
+      settings: "&cSettings"
+    lore:
+      settings:
+        - "&7Open Vault settings."
+      pay:
+        - "&7Pay this player."
+      loan:
+        - "&7Open your loan menu."
+      view_balance:
+        - "&7Shows current balance."
+      charge:
+        - "&7Send a payment request."
+  prompt:
+    enter_amount_pay: "Type the amount to pay to %player% in chat, or '%cancel%'."
+    enter_amount_charge: "Type the amount you want to charge %player% in chat, or '%cancel%'."
+    cancel_words: "cancel,cancelar"
+  error:
+    player_not_found: "Player not found: %player%"
+    invalid_amount: "Invalid amount."
+    positive_only: "Amount must be positive."
+    min_amount: "Amount must be at least %min%"
+    max_amount: "Amount must be at most %max%"
+    insufficient_funds: "Insufficient funds."
+    withdraw_error: "Could not withdraw: %error%"
+    deposit_error: "Could not deposit: %error%"
+    player_offline: "Player %player% is offline; request not delivered."
+  success:
+    sender: "You paid %amount% to %player%"
+
+  view:
+    balance: "Balance of %player%: %amount%"
+    money_label: "Money"
+  request:
+    prefix: "Payment request prepared: "
+    click: "Click here to pay %player% %amount_formatted%"
+    hover: "Run /pay %player% %amount%"
+    sent: "Request sent to %player% for %amount_formatted%."
+    stored: "Request stored; will be delivered when %player% joins."
+  pending:
+    header: "You have %count% pending payment requests."
+    limit_notice: "Showing %shown% of %total%; remaining will be delivered later."
+
+cmd:
+  pay:
+    only_players: "Only players can use /pay."
+    no_permission: "You do not have permission to use /pay."
+    usage: "Usage: /pay <player> <amount> (or /pay to open menu, /pay <player> opens submenu)"
+    player_not_found: "Player not found: %player%"
+    invalid_amount: "Invalid amount: %amount%"
+    positive_only: "Amount must be positive."
+  balance:
+    only_players: "This command is for players only."
+    no_permission: "You do not have permission to use /balance."
+    your_balance: "Your balance: %amount%"
+  vault:
+    no_permission: "You do not have permission to reload the plugin."
+
+# Keys expected by menu service (top-level)
+menu:
+  title_main: "Select player"
+  title_player: "Actions: %player%"
+  target_player: "Select target"
+  target_player_lore: "Click to choose a player"
+  enter_amount: "Enter amount"
+  enter_amount_lore: "Type the amount in chat"
+
+# Keys expected by balance command (top-level)
+balance:
+  no_permission: "You do not have permission to use /balance."
+  your_balance: "Your balance: %amount%"
+
+plugin:
+  enabled: "Internal economy registered without depending on Vault.jar"
+  disabled: "Vault (internal economy) disabled."
+  reloaded: "Configuration and messages reloaded (language: %lang%)."
+
+prefix: "&b[Vault]&r "
+
+top:
+  unknown_player: "Player"
+
+vaultop:
+  no_permission: "You do not have permission to use /vaultop."
+  top_unavailable: "Top is not available with the current economy provider."
+  top_header: "&6Top money &7(Page %page%/%pages%):"
+  no_data: "&7No balance data yet."
+
+vault:
+  menu:
+    title: "&bVault Menu"
+    item:
+      pay: "&aPay"
+      loan: "&aLoan"
+      settings: "&cSettings"
+      reload: "&eReload"
+      update: "&bUpdate"
+    lore:
+      pay:
+        - "&7Open the pay menu."
+      loan:
+        - "&7Request, view and pay loans."
+      settings:
+        - "&7Edit plugin settings."
+      reload:
+        - "&7Reload config and messages."
+      update:
+        - "&7Check for updates."
+
+settings:
+  title: "&cSettings"
+  title_loans: "&cLoan Settings"
+  title_pay: "&cPay Settings"
+  title_texts: "&cText Settings"
+  item:
+    loans: "&aLoans"
+    pay: "&aPay"
+    texts: "&aTexts"
+    back: "&7Back"
+  lore:
+    loans:
+      - "&7Configure loan system."
+    pay:
+      - "&7Configure /pay limits and menu."
+    texts:
+      - "&7Edit menu texts."
+    back:
+      - "&7Go back."
+    loans_enabled:
+      - "&7Toggle loans on/off."
+    loans_min:
+      - "&7Minimum allowed loan amount."
+    loans_max:
+      - "&7Maximum allowed loan amount."
+    loans_max_installments:
+      - "&7Maximum installments allowed."
+    loans_default_interval_hours:
+      - "&7Default hours between installments."
+    loans_charge_check_seconds:
+      - "&7How often to process charges."
+    loans_max_missed:
+      - "&7How many missed payments before default."
+    pay_min:
+      - "&7Minimum allowed pay amount."
+    pay_max:
+      - "&7Maximum allowed pay amount."
+    pay_menu_size:
+      - "&7Size of /pay menu (multiple of 9)."
+    pay_show_self:
+      - "&7Show yourself in /pay list."
+  loans:
+    enabled: "&fLoans"
+    min: "&fMin loan"
+    max: "&fMax loan"
+    max_installments: "&fMax installments"
+    default_interval_hours: "&fDefault interval (h)"
+    charge_check_seconds: "&fCharge check (s)"
+    max_missed: "&fMax missed"
+  pay:
+    min: "&fMin pay"
+    max: "&fMax pay"
+    menu_size: "&fPay menu size"
+    show_self: "&fShow self"
+  prompt:
+    value: "Type the new value for %key% in chat, or '%cancel%'."
+    text: "Type the new text for %key% in chat, or '%cancel%'."
+  cancelled: "Edit cancelled."
+  invalid_number: "Invalid number."
+  saved: "Saved: %key%"
+  save_failed: "Could not save the file."
+
+loan:
+  no_permission: "You do not have permission to use loans."
+  none: "You do not have an active loan."
+  already_active: "You already have an active loan."
+  cancelled: "Loan action cancelled."
+  created: "Loan created: %amount% | installments: %installments% | installment: %installment_amount% | every %interval_hours%h"
+  paid: "Your loan is fully paid."
+  status: "Loan: principal %principal% | remaining %remaining% | installment %installment% | installments left %installments_left% | next charge in %next_in_minutes%m"
+  menu:
+    title: "&aLoan"
+    item:
+      request: "&aRequest"
+      status: "&eStatus"
+      pay: "&6Pay"
+      settings: "&cSettings"
+    lore:
+      request:
+        - "&7Request a new loan."
+      status:
+        - "&7View your current loan status."
+      pay:
+        - "&7Pay your loan."
+      settings:
+        - "&7Open loan settings."
+  request:
+    title:
+      type: "&aLoan Request"
+      delay: "&eTotal Delay"
+      installments_mode: "&eInstallments Mode"
+      installments_count: "&eInstallments Count"
+      interval: "&eInterval"
+      first_delay: "&eFirst Payment"
+    item:
+      total: "&eTotal"
+      installments: "&aInstallments"
+      mode_count: "&eCount"
+      mode_amount: "&eAmount"
+      same_as_interval: "&eSame as interval"
+      back: "&7Back"
+      cancel: "&cCancel"
+    lore:
+      total:
+        - "&7One payment."
+      installments:
+        - "&7Multiple payments."
+      mode_count:
+        - "&7Choose installments count."
+      mode_amount:
+        - "&7Type installment amount in chat."
+      installments_count:
+        - "&7Select how many installments."
+      delay:
+        - "&7Select in how many hours to charge."
+      interval:
+        - "&7Select hours between installments."
+      first_delay:
+        - "&7Select the first payment delay."
+      back:
+        - "&7Go back."
+      cancel:
+        - "&7Cancel request."
+  prompt:
+    cancel_words: "cancel,cancelar"
+    amount: "Type the loan amount in chat, or '%cancel%'."
+    type: "Type 'total' (pay once) or 'cuotas' (installments), or '%cancel%'."
+    total_delay_hours: "In how many hours should the server collect the total payment? (example: 24) Or '%cancel%'."
+    installments_mode: "Type 'cantidad' (enter installments count) or 'monto' (enter installment amount), or '%cancel%'."
+    installments_count: "How many installments? Or '%cancel%'."
+    installment_amount: "Type the installment amount (each payment). Or '%cancel%'."
+    interval_hours: "Interval between installments in hours (0 = default %default_hours%). Or '%cancel%'."
+    first_delay_hours: "First installment in how many hours? (0 = same as interval %default_hours%). Or '%cancel%'."
+    pay_amount: "Type how much you want to pay (or 'all'). Remaining: %remaining%. Or '%cancel%'."
+  error:
+    invalid_number: "Invalid number."
+    invalid_type: "Invalid type. Use 'total' or 'cuotas'."
+    invalid_installments_mode: "Invalid option. Use 'cantidad' or 'monto'."
+    installment_too_small: "For a loan of %loan_amount%, the minimum installment is %min_installment%."
+    too_small: "Loan amount must be at least %min%."
+    too_large: "Loan amount must be at most %max%."
+    too_many_installments: "Too many installments. Max: %max%."
+    not_enough_money: "Insufficient funds to pay."
+    deposit_failed: "Could not create the loan (deposit failed)."
+  pay:
+    success: "Payment received: %amount%. Remaining: %remaining%."
+  charge:
+    success: "Installment charged: %amount%. Remaining: %remaining%."
+    missed: "Installment not charged (%amount%). Missed %missed%/%max_missed%."
+    defaulted: "Loan defaulted. Remaining: %remaining%."
+
+economy:
+  bank_not_supported: "Bank support not implemented"
+  eco:
+    usage: "Usage: /eco give <player> <amount> | /eco take <player> <amount>"
+    no_permission: "You do not have permission to use /eco."
+    player_not_found: "Player not found: %player%"
+    invalid_amount: "Invalid amount: %amount%"
+    positive_only: "Amount must be positive."
+    deposit_ok: "Added %amount% to %player%."
+    withdraw_ok: "Removed %amount% from %player%."
+    deposit_error: "Could not deposit: %error%"
+    withdraw_error: "Could not withdraw: %error%"

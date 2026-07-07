@@ -1,0 +1,131 @@
+services:
+
+  mariadb:
+    image: mariadb:10.11
+    container_name: mariadb-plugins
+    environment:
+      MARIADB_DATABASE: ${MARIADB_DATABASE}
+      MARIADB_USER: ${MARIADB_USER}
+      MARIADB_PASSWORD: ${MARIADB_PASSWORD}
+      MARIADB_ROOT_PASSWORD: ${MARIADB_ROOT_PASSWORD}
+      TZ: "America/Caracas"
+    volumes:
+      - ./mariadb-data:/var/lib/mysql
+      - ./mariadb-init:/docker-entrypoint-initdb.d:ro
+    ports:
+      - "100.76.41.2:3306:3306"  # Solo expuesto en la interfaz Tailscale — nunca en internet
+    networks:
+      - mc-net
+    restart: unless-stopped
+
+  proxy:
+    image: itzg/mc-proxy
+    container_name: proxy-central
+    ports:
+      - target: 25577
+        published: 25565
+        protocol: tcp
+        mode: host
+      - target: 19132
+        published: 19132
+        protocol: udp
+        mode: host
+    environment:
+      EULA: "TRUE"
+      TYPE: "VELOCITY"
+      MEMORY: "1024M"
+      TZ: "America/Caracas"
+    volumes:
+      - ./proxy-data:/server
+    networks:
+      - mc-net
+    deploy:
+      resources:
+        limits:
+          memory: 1536M
+    restart: unless-stopped
+
+  mc-lobby:
+    image: itzg/minecraft-server:java21
+    container_name: servidor-lobby
+    depends_on:
+      - mariadb
+    environment:
+      EULA: "TRUE"
+      TYPE: "PAPER"
+      VERSION: "1.20.6"
+      MEMORY: "1024M"
+      MOTD: "§2§lShadowGarden Network §f| §aLobby"
+      MAX_PLAYERS: "20"
+      ONLINE_MODE: "FALSE"
+      MODE: "creative"
+      DIFFICULTY: "peaceful"
+      ENABLE_COMMAND_BLOCK: "TRUE"
+      VELOCITY_SECRET: ${VELOCITY_SECRET}
+      TZ: "America/Caracas"
+      USE_AIKAR_FLAGS: "true"
+    volumes:
+      - ./data:/data
+    tty: true
+    stdin_open: true
+    networks:
+      - mc-net
+    deploy:
+      resources:
+        limits:
+          memory: 1536M
+    healthcheck:
+      test: mc-monitor status --host localhost --port 25565
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: unless-stopped
+
+  lobby-backup:
+    image: itzg/mc-backup
+    container_name: lobby-backup
+    depends_on:
+      - mc-lobbyew
+    environment:
+      BACKUP_INTERVAL: "12h"  
+      PRUNE_BACKUPS_DAYS: "7"
+      TZ: "America/Caracas"
+    volumes:
+      - ./data:/data:ro
+      - ./backups/lobby:/backups
+    network_mode: "service:mc-lobby"
+    restart: unless-stopped
+
+  mc-survival:
+    image: itzg/minecraft-server:java21
+    container_name: servidor-survival
+    depends_on:
+      - mariadb
+    environment:
+      EULA: "TRUE"
+      TYPE: "PAPER"
+      VERSION: "1.20.6"
+      MEMORY: "2048M"
+      MOTD: "§2§lShadowGarden Network §f| §cSurvival"
+      MAX_PLAYERS: "20"
+      ONLINE_MODE: "FALSE" 
+      MODE: "survival"
+      DIFFICULTY: "normal"
+      ENABLE_COMMAND_BLOCK: "TRUE"
+      VELOCITY_SECRET: ${VELOCITY_SECRET}
+      TZ: "America/Caracas"
+      USE_AIKAR_FLAGS: "true"
+    volumes:
+      - ./survival-data:/data
+    tty: true
+    stdin_open: true
+    networks:
+      - mc-net
+    deploy:
+      resources:
+        limits:
+          memory: 3000M
+    restart: unless-stopped
+
+networks:
+  mc-net:

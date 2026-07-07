@@ -1,0 +1,295 @@
+pay:
+  only_players: "Tylko gracze mogą używać /pay."
+  no_permission: "Nie masz uprawnień do używania /pay."
+  invalid_amount: "Nieprawidłowa kwota."
+  player_offline: "Gracz %player% jest offline; żądanie nie zostało dostarczone."
+  amount_too_small: "Kwota musi wynosić co najmniej %min%"
+  amount_too_large: "Kwota może wynosić maksymalnie %max%"
+  not_enough_money: "Niewystarczające środki."
+  withdraw_failed: "Nie udało się wypłacić."
+  sent_ok: "Zapłaciłeś %amount% graczowi %player%"
+  received_ok: "Otrzymałeś %amount% od %player%"
+
+  menu:
+    title_main: "Wybierz gracza"
+    title_player: "Akcje: %player%"
+    nav:
+      prev_name: "&aPoprzednia strona"
+      next_name: "&aNastępna strona"
+    item:
+      pay: "Zapłać"
+      loan: "Pożyczka"
+      view_balance: "Pokaż saldo"
+      view_balance_lore: "Saldo: %vault_balance_formatted%"
+      charge: "Obciąż"
+      settings: "&cUstawienia"
+    lore:
+      settings:
+        - "&7Otwórz ustawienia Vault."
+      pay:
+        - "&7Zapłać temu graczowi."
+      loan:
+        - "&7Otwórz menu pożyczek."
+      view_balance:
+        - "&7Pokazuje aktualne saldo."
+      charge:
+        - "&7Wyślij żądanie płatności."
+  prompt:
+    enter_amount_pay: "Wpisz kwotę do zapłaty dla %player% na czacie lub '%cancel%'."
+    enter_amount_charge: "Wpisz kwotę, którą chcesz obciążyć %player% na czacie lub '%cancel%'."
+    cancel_words: "cancel,anuluj"
+  error:
+    player_not_found: "Nie znaleziono gracza: %player%"
+    invalid_amount: "Nieprawidłowa kwota."
+    positive_only: "Kwota musi być dodatnia."
+    min_amount: "Kwota musi wynosić co najmniej %min%"
+    max_amount: "Kwota może wynosić maksymalnie %max%"
+    insufficient_funds: "Niewystarczające środki."
+    withdraw_error: "Nie udało się wypłacić: %error%"
+    deposit_error: "Nie udało się wpłacić: %error%"
+    player_offline: "Gracz %player% jest offline; żądanie nie zostało dostarczone."
+
+  success:
+    sender: "Zapłaciłeś %amount% graczowi %player%"
+
+  view:
+    balance: "Saldo gracza %player%: %amount%"
+    money_label: "Pieniądze"
+  request:
+    prefix: "Przygotowano żądanie płatności: "
+    click: "Kliknij tutaj, aby zapłacić %player% %amount_formatted%"
+    hover: "Wykonaj /pay %player% %amount%"
+    sent: "Żądanie wysłane do %player% na %amount_formatted%."
+    stored: "Żądanie zapisane; zostanie dostarczone, gdy %player% wejdzie na serwer."
+  pending:
+    header: "Masz %count% oczekujących żądań płatności."
+    limit_notice: "Pokazano %shown% z %total%; reszta zostanie dostarczona później."
+
+cmd:
+  pay:
+    only_players: "Tylko gracze mogą używać /pay."
+    no_permission: "Nie masz uprawnień do używania /pay."
+    usage: "Użycie: /pay <gracz> <kwota> (albo /pay aby otworzyć menu, /pay <gracz> otwiera podmenu)"
+    player_not_found: "Nie znaleziono gracza: %player%"
+    invalid_amount: "Nieprawidłowa kwota: %amount%"
+    positive_only: "Kwota musi być dodatnia."
+  balance:
+    only_players: "Ta komenda jest tylko dla graczy."
+    no_permission: "Nie masz uprawnień do używania /balance."
+    your_balance: "Twoje saldo: %amount%"
+  vault:
+    no_permission: "Nie masz uprawnień do przeładowania pluginu."
+
+menu:
+  title_main: "Wybierz gracza"
+  title_player: "Akcje: %player%"
+  target_player: "Wybierz cel"
+  target_player_lore: "Kliknij, aby wybrać gracza"
+  enter_amount: "Wpisz kwotę"
+  enter_amount_lore: "Wpisz kwotę na czacie"
+
+balance:
+  only_players: "Ta komenda jest tylko dla graczy."
+  no_permission: "Nie masz uprawnień do używania /balance."
+  your_balance: "Twoje saldo: %amount%"
+
+plugin:
+  enabled: "Wewnętrzna ekonomia zarejestrowana bez zależności od Vault.jar"
+  disabled: "Vault (wewnętrzna ekonomia) wyłączony."
+  reloaded: "Konfiguracja i wiadomości przeładowane (język: %lang%)."
+
+prefix: "&b[Vault]&r "
+
+top:
+  unknown_player: "Gracz"
+
+vaultop:
+  no_permission: "Nie masz uprawnień do używania /vaultop."
+  top_unavailable: "Ranking nie jest dostępny dla obecnego dostawcy ekonomii."
+  top_header: "&6Top pieniędzy &7(Strona %page%/%pages%):"
+  no_data: "&7Brak danych o saldach."
+
+vault:
+  menu:
+    title: "&bMenu Vault"
+    item:
+      pay: "&aPłatności"
+      loan: "&aPożyczki"
+      settings: "&cUstawienia"
+      reload: "&ePrzeładuj"
+      update: "&bAktualizacje"
+    lore:
+      pay:
+        - "&7Otwórz menu płatności."
+      loan:
+        - "&7Poproś o pożyczkę, sprawdź i spłać."
+      settings:
+        - "&7Edytuj ustawienia pluginu."
+      reload:
+        - "&7Przeładuj config i wiadomości."
+      update:
+        - "&7Sprawdź aktualizacje."
+
+settings:
+  title: "&cUstawienia"
+  title_loans: "&cUstawienia pożyczek"
+  title_pay: "&cUstawienia płatności"
+  title_texts: "&cUstawienia tekstów"
+  item:
+    loans: "&aPożyczki"
+    pay: "&aPłatności"
+    texts: "&aTeksty"
+    back: "&7Wstecz"
+  lore:
+    loans:
+      - "&7Konfiguruj system pożyczek."
+    pay:
+      - "&7Konfiguruj limity i menu /pay."
+    texts:
+      - "&7Edytuj teksty menu."
+    back:
+      - "&7Wróć."
+    loans_enabled:
+      - "&7Włącz/wyłącz pożyczki."
+    loans_min:
+      - "&7Minimalna kwota pożyczki."
+    loans_max:
+      - "&7Maksymalna kwota pożyczki."
+    loans_max_installments:
+      - "&7Maksymalna liczba rat."
+    loans_default_interval_hours:
+      - "&7Domyślne godziny między ratami."
+    loans_charge_check_seconds:
+      - "&7Jak często przetwarzać obciążenia."
+    loans_max_missed:
+      - "&7Ile nieudanych rat przed zaległością."
+    pay_min:
+      - "&7Minimalna kwota płatności."
+    pay_max:
+      - "&7Maksymalna kwota płatności."
+    pay_menu_size:
+      - "&7Rozmiar menu /pay (wielokrotność 9)."
+    pay_show_self:
+      - "&7Pokaż siebie na liście /pay."
+  loans:
+    enabled: "&fPożyczki"
+    min: "&fMin pożyczka"
+    max: "&fMax pożyczka"
+    max_installments: "&fMax rat"
+    default_interval_hours: "&fDomyślny odstęp (h)"
+    charge_check_seconds: "&fSprawdź raty (s)"
+    max_missed: "&fMax zaległych"
+  pay:
+    min: "&fMin płatność"
+    max: "&fMax płatność"
+    menu_size: "&fRozmiar menu /pay"
+    show_self: "&fPokaż siebie"
+  prompt:
+    value: "Wpisz nową wartość dla %key% na czacie lub '%cancel%'."
+    text: "Wpisz nowy tekst dla %key% na czacie lub '%cancel%'."
+  cancelled: "Edycja anulowana."
+  invalid_number: "Nieprawidłowa liczba."
+  saved: "Zapisano: %key%"
+  save_failed: "Nie udało się zapisać pliku."
+
+loan:
+  no_permission: "Nie masz uprawnień do korzystania z pożyczek."
+  none: "Nie masz aktywnej pożyczki."
+  already_active: "Masz już aktywną pożyczkę."
+  cancelled: "Akcja pożyczki anulowana."
+  created: "Pożyczka utworzona: %amount% | raty: %installments% | rata: %installment_amount% | co %interval_hours%h"
+  paid: "Twoja pożyczka została całkowicie spłacona."
+  status: "Pożyczka: kapitał %principal% | pozostało %remaining% | rata %installment% | rat pozostało %installments_left% | następne obciążenie za %next_in_minutes%m"
+  menu:
+    title: "&aPożyczka"
+    item:
+      request: "&aPoproś"
+      status: "&eStatus"
+      pay: "&6Spłać"
+      settings: "&cUstawienia"
+    lore:
+      request:
+        - "&7Poproś o nową pożyczkę."
+      status:
+        - "&7Zobacz status swojej pożyczki."
+      pay:
+        - "&7Spłać pożyczkę."
+      settings:
+        - "&7Otwórz ustawienia pożyczek."
+  request:
+    title:
+      type: "&aWniosek o pożyczkę"
+      delay: "&eŁączne opóźnienie"
+      installments_mode: "&eTryb rat"
+      installments_count: "&eLiczba rat"
+      interval: "&eOdstęp"
+      first_delay: "&ePierwsza płatność"
+    item:
+      total: "&eCałość"
+      installments: "&aRaty"
+      mode_count: "&eLiczba"
+      mode_amount: "&eKwota"
+      same_as_interval: "&eTak jak odstęp"
+      back: "&7Wstecz"
+      cancel: "&cAnuluj"
+    lore:
+      total:
+        - "&7Jedna płatność."
+      installments:
+        - "&7Wiele płatności."
+      mode_count:
+        - "&7Wybierz liczbę rat."
+      mode_amount:
+        - "&7Wpisz kwotę raty na czacie."
+      installments_count:
+        - "&7Wybierz ile rat."
+      delay:
+        - "&7Wybierz za ile godzin pobrać płatność."
+      interval:
+        - "&7Wybierz godziny między ratami."
+      first_delay:
+        - "&7Wybierz opóźnienie pierwszej raty."
+      back:
+        - "&7Wróć."
+      cancel:
+        - "&7Anuluj wniosek."
+  prompt:
+    cancel_words: "cancel,anuluj"
+    amount: "Wpisz kwotę pożyczki na czacie lub '%cancel%'."
+    type: "Wpisz 'total' (jednorazowo) albo 'installments' (raty) lub '%cancel%'."
+    total_delay_hours: "Za ile godzin serwer ma pobrać całą kwotę? (np. 24) Lub '%cancel%'."
+    installments_mode: "Wpisz 'count' (liczba rat) albo 'amount' (kwota raty) lub '%cancel%'."
+    installments_count: "Ile rat? Lub '%cancel%'."
+    installment_amount: "Wpisz kwotę raty (każda płatność). Lub '%cancel%'."
+    interval_hours: "Odstęp między ratami w godzinach (0 = domyślnie %default_hours%). Lub '%cancel%'."
+    first_delay_hours: "Pierwsza rata za ile godzin? (0 = tak jak odstęp %default_hours%). Lub '%cancel%'."
+    pay_amount: "Wpisz ile chcesz zapłacić (lub 'all'). Pozostało: %remaining%. Lub '%cancel%'."
+  error:
+    invalid_number: "Nieprawidłowa liczba."
+    invalid_type: "Nieprawidłowy typ. Użyj 'total' lub 'installments'."
+    invalid_installments_mode: "Nieprawidłowa opcja. Użyj 'count' lub 'amount'."
+    installment_too_small: "Dla pożyczki %loan_amount% minimalna rata to %min_installment%."
+    too_small: "Kwota pożyczki musi wynosić co najmniej %min%."
+    too_large: "Kwota pożyczki może wynosić maksymalnie %max%."
+    too_many_installments: "Za dużo rat. Maks: %max%."
+    not_enough_money: "Niewystarczające środki do spłaty."
+    deposit_failed: "Nie udało się utworzyć pożyczki (wpłata nie powiodła się)."
+  pay:
+    success: "Otrzymano płatność: %amount%. Pozostało: %remaining%."
+  charge:
+    success: "Pobrano ratę: %amount%. Pozostało: %remaining%."
+    missed: "Nie pobrano raty (%amount%). Brak %missed%/%max_missed%."
+    defaulted: "Pożyczka przeterminowana. Pozostało: %remaining%."
+
+economy:
+  bank_not_supported: "Obsługa banku nie została zaimplementowana"
+  eco:
+    usage: "Użycie: /eco give <gracz> <kwota> | /eco take <gracz> <kwota>"
+    no_permission: "Nie masz uprawnień do używania /eco."
+    player_not_found: "Nie znaleziono gracza: %player%"
+    invalid_amount: "Nieprawidłowa kwota: %amount%"
+    positive_only: "Kwota musi być dodatnia."
+    deposit_ok: "Dodano %amount% do %player%."
+    withdraw_ok: "Usunięto %amount% z %player%."
+    deposit_error: "Nie udało się wpłacić: %error%"
+    withdraw_error: "Nie udało się wypłacić: %error%"

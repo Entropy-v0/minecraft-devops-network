@@ -1,0 +1,295 @@
+# Dutch messages (Nederlands)
+pay:
+  # Command messages expected by code
+  only_players: "Alleen spelers kunnen /pay gebruiken."
+  no_permission: "Je hebt geen toestemming om /pay te gebruiken."
+  invalid_amount: "Ongeldig bedrag."
+  player_offline: "Speler %player% is offline; verzoek niet afgeleverd."
+  amount_too_small: "Bedrag moet minstens %min% zijn"
+  amount_too_large: "Bedrag mag maximaal %max% zijn"
+  not_enough_money: "Onvoldoende saldo."
+  withdraw_failed: "Kan niet opnemen."
+  sent_ok: "Je hebt %amount% betaald aan %player%"
+  received_ok: "Je hebt %amount% ontvangen van %player%"
+
+  # UI/menu and other messages
+  menu:
+    title_main: "Selecteer speler"
+    title_player: "Acties: %player%"
+    nav:
+      prev_name: "&aVorige pagina"
+      next_name: "&aVolgende pagina"
+    item:
+      pay: "Betalen"
+      loan: "Lening"
+      view_balance: "Saldo bekijken"
+      view_balance_lore: "Saldo: %vault_balance_formatted%"
+      charge: "Incasseren"
+      settings: "&cInstellingen"
+    lore:
+      settings:
+        - "&7Vault-instellingen openen."
+      pay:
+        - "&7Deze speler betalen."
+      loan:
+        - "&7Open je leningmenu."
+      view_balance:
+        - "&7Huidig saldo tonen."
+      charge:
+        - "&7Een betaalverzoek sturen."
+  prompt:
+    enter_amount_pay: "Typ het te betalen bedrag aan %player% in de chat, of '%cancel%'."
+    enter_amount_charge: "Typ het te incasseren bedrag van %player% in de chat, of '%cancel%'."
+    cancel_words: "annuleren,cancel,cancelar"
+  error:
+    player_not_found: "Speler niet gevonden: %player%"
+    invalid_amount: "Ongeldig bedrag."
+    positive_only: "Bedrag moet positief zijn."
+    min_amount: "Bedrag moet minstens %min% zijn"
+    max_amount: "Bedrag mag maximaal %max% zijn"
+    insufficient_funds: "Onvoldoende saldo."
+    withdraw_error: "Kan niet opnemen: %error%"
+    deposit_error: "Kan niet storten: %error%"
+    player_offline: "Speler %player% is offline; verzoek niet afgeleverd."
+  success:
+    sender: "Je hebt %amount% betaald aan %player%"
+
+  view:
+    balance: "Saldo van %player%: %amount%"
+    money_label: "Geld"
+  request:
+    prefix: "Betaalverzoek voorbereid: "
+    click: "Klik hier om %player% %amount_formatted% te betalen"
+    hover: "Voer uit /pay %player% %amount%"
+    sent: "Verzoek verzonden naar %player% voor %amount_formatted%."
+    stored: "Verzoek opgeslagen; wordt afgeleverd wanneer %player% inlogt."
+  pending:
+    header: "Je hebt %count% openstaande betaalverzoeken."
+    limit_notice: "Toont %shown% van %total%; de rest wordt later afgeleverd."
+
+cmd:
+  pay:
+    only_players: "Alleen spelers kunnen /pay gebruiken."
+    no_permission: "Je hebt geen toestemming om /pay te gebruiken."
+    usage: "Gebruik: /pay <speler> <bedrag> (of /pay om menu te openen, /pay <speler> opent submenu)"
+    player_not_found: "Speler niet gevonden: %player%"
+    invalid_amount: "Ongeldig bedrag: %amount%"
+    positive_only: "Bedrag moet positief zijn."
+  balance:
+    only_players: "Dit commando is alleen voor spelers."
+    no_permission: "Je hebt geen toestemming om /balance te gebruiken."
+    your_balance: "Jouw saldo: %amount%"
+  vault:
+    no_permission: "Je hebt geen toestemming om de plugin te herladen."
+
+# Keys expected by menu service (top-level)
+menu:
+  title_main: "Selecteer speler"
+  title_player: "Acties: %player%"
+  target_player: "Selecteer doelwit"
+  target_player_lore: "Klik om een speler te kiezen"
+  enter_amount: "Voer bedrag in"
+  enter_amount_lore: "Typ het bedrag in de chat"
+
+# Keys expected by balance command (top-level)
+balance:
+  no_permission: "Je hebt geen toestemming om /balance te gebruiken."
+  your_balance: "Jouw saldo: %amount%"
+
+plugin:
+  enabled: "Interne economie geregistreerd zonder afhankelijkheid van Vault.jar"
+  disabled: "Vault (interne economie) uitgeschakeld."
+  reloaded: "Configuratie en berichten herladen (taal: %lang%)."
+
+prefix: "&b[Vault]&r "
+
+top:
+  unknown_player: "Speler"
+
+vaultop:
+  no_permission: "Je hebt geen toestemming om /vaultop te gebruiken."
+  top_unavailable: "Top is niet beschikbaar met de huidige economy-provider."
+  top_header: "&6Top geld &7(Pagina %page%/%pages%):"
+  no_data: "&7Nog geen saldo-gegevens."
+
+vault:
+  menu:
+    title: "&bVault-menu"
+    item:
+      pay: "&aPay"
+      loan: "&aLening"
+      settings: "&cInstellingen"
+      reload: "&eHerladen"
+      update: "&bUpdate"
+    lore:
+      pay:
+        - "&7Open het betaalmenu."
+      loan:
+        - "&7Leningen aanvragen, bekijken en betalen."
+      settings:
+        - "&7Plugin-instellingen bewerken."
+      reload:
+        - "&7Config en berichten herladen."
+      update:
+        - "&7Controleren op updates."
+
+settings:
+  title: "&cInstellingen"
+  title_loans: "&cLening instellingen"
+  title_pay: "&cPay instellingen"
+  title_texts: "&cTekst instellingen"
+  item:
+    loans: "&aLeningen"
+    pay: "&aPay"
+    texts: "&aTeksten"
+    back: "&7Terug"
+  lore:
+    loans:
+      - "&7Leensysteem configureren."
+    pay:
+      - "&7/pay-limieten en menu configureren."
+    texts:
+      - "&7Menuteksten bewerken."
+    back:
+      - "&7Ga terug."
+    loans_enabled:
+      - "&7Leningen aan/uit zetten."
+    loans_min:
+      - "&7Minimum leenbedrag."
+    loans_max:
+      - "&7Maximum leenbedrag."
+    loans_max_installments:
+      - "&7Maximaal aantal termijnen."
+    loans_default_interval_hours:
+      - "&7Standaard uren tussen termijnen."
+    loans_charge_check_seconds:
+      - "&7Hoe vaak afschrijvingen worden verwerkt."
+    loans_max_missed:
+      - "&7Hoeveel missers tot wanbetaling."
+    pay_min:
+      - "&7Minimum betaalbedrag."
+    pay_max:
+      - "&7Maximum betaalbedrag."
+    pay_menu_size:
+      - "&7Grootte van /pay-menu (veelvoud van 9)."
+    pay_show_self:
+      - "&7Toon jezelf in /pay."
+  loans:
+    enabled: "&fLeningen"
+    min: "&fMin lening"
+    max: "&fMax lening"
+    max_installments: "&fMax termijnen"
+    default_interval_hours: "&fStandaard interval (u)"
+    charge_check_seconds: "&fControle (s)"
+    max_missed: "&fMax missers"
+  pay:
+    min: "&fMin betaling"
+    max: "&fMax betaling"
+    menu_size: "&f/pay menu grootte"
+    show_self: "&fToon mij"
+  prompt:
+    value: "Typ de nieuwe waarde voor %key% in de chat, of '%cancel%'."
+    text: "Typ de nieuwe tekst voor %key% in de chat, of '%cancel%'."
+  cancelled: "Bewerking geannuleerd."
+  invalid_number: "Ongeldig getal."
+  saved: "Opgeslagen: %key%"
+  save_failed: "Kon het bestand niet opslaan."
+
+loan:
+  no_permission: "Je hebt geen toestemming om leningen te gebruiken."
+  none: "Je hebt geen actieve lening."
+  already_active: "Je hebt al een actieve lening."
+  cancelled: "Leningactie geannuleerd."
+  created: "Lening aangemaakt: %amount% | termijnen: %installments% | termijn: %installment_amount% | elke %interval_hours%u"
+  paid: "Je lening is volledig afbetaald."
+  status: "Lening: hoofdsom %principal% | resterend %remaining% | termijn %installment% | resterende termijnen %installments_left% | volgende afschrijving over %next_in_minutes%m"
+  menu:
+    title: "&aLening"
+    item:
+      request: "&aAanvragen"
+      status: "&eStatus"
+      pay: "&6Betalen"
+      settings: "&cInstellingen"
+    lore:
+      request:
+        - "&7Vraag een nieuwe lening aan."
+      status:
+        - "&7Bekijk je leningstatus."
+      pay:
+        - "&7Betaal je lening."
+      settings:
+        - "&7Open leninginstellingen."
+  request:
+    title:
+      type: "&aLening aanvragen"
+      delay: "&eTotale vertraging"
+      installments_mode: "&eTermijnmodus"
+      installments_count: "&eAantal termijnen"
+      interval: "&eInterval"
+      first_delay: "&eEerste termijn"
+    item:
+      total: "&eTotaal"
+      installments: "&aTermijnen"
+      mode_count: "&eAantal"
+      mode_amount: "&eBedrag"
+      same_as_interval: "&eZelfde als interval"
+      back: "&7Terug"
+      cancel: "&cAnnuleren"
+    lore:
+      total:
+        - "&7Eenmalige betaling."
+      installments:
+        - "&7Betaling in termijnen."
+      mode_count:
+        - "&7Kies aantal termijnen."
+      mode_amount:
+        - "&7Typ termijnbedrag in chat."
+      installments_count:
+        - "&7Selecteer aantal termijnen."
+      delay:
+        - "&7Selecteer vertraging in uren."
+      interval:
+        - "&7Selecteer uren tussen termijnen."
+      first_delay:
+        - "&7Selecteer eerste betaling vertraging."
+      back:
+        - "&7Ga terug."
+      cancel:
+        - "&7Annuleer aanvraag."
+  prompt:
+    cancel_words: "annuleren,cancel,cancelar"
+    amount: "Typ het leenbedrag in de chat, of '%cancel%'."
+    type: "Typ 'total' (eenmalige betaling) of 'termijnen', of '%cancel%'."
+    total_delay_hours: "Over hoeveel uur moet de server het volledige bedrag innen? (voorbeeld: 24) Of '%cancel%'."
+    installments_mode: "Typ 'aantal' (aantal termijnen) of 'bedrag' (bedrag per termijn), of '%cancel%'."
+    installments_count: "Hoeveel termijnen? Of '%cancel%'."
+    installment_amount: "Typ het bedrag van elke termijn. Of '%cancel%'."
+    interval_hours: "Interval tussen termijnen in uren (0 = standaard %default_hours%). Of '%cancel%'."
+    first_delay_hours: "Eerste termijn over hoeveel uur? (0 = zelfde interval %default_hours%). Of '%cancel%'."
+    pay_amount: "Typ hoeveel je wilt betalen (of 'all'). Resterend: %remaining%. Of '%cancel%'."
+  error:
+    invalid_number: "Ongeldig getal."
+    invalid_type: "Ongeldig type. Gebruik 'total' of 'termijnen'."
+    invalid_installments_mode: "Ongeldige optie. Gebruik 'aantal' of 'bedrag'."
+    too_small: "Het leenbedrag moet minstens %min% zijn."
+    too_large: "Het leenbedrag mag maximaal %max% zijn."
+    too_many_installments: "Te veel termijnen. Maximum: %max%."
+    not_enough_money: "Onvoldoende geld om te betalen."
+    deposit_failed: "De lening kon niet worden aangemaakt (storting mislukt)."
+  pay:
+    success: "Betaling ontvangen: %amount%. Resterend: %remaining%."
+  charge:
+    success: "Termijn afgeschreven: %amount%. Resterend: %remaining%."
+    missed: "Termijn kon niet worden afgeschreven (%amount%). Mislukkingen %missed%/%max_missed%."
+    defaulted: "Lening in gebreke. Resterend: %remaining%."
+
+economy:
+  bank_not_supported: "Bankondersteuning niet geïmplementeerd"
+  eco:
+    usage: "Gebruik: /eco give <speler> <bedrag> | /eco take <speler> <bedrag>"
+    no_permission: "Je hebt geen toestemming om /eco te gebruiken."
+    player_not_found: "Speler niet gevonden: %player%"
+    invalid_amount: "Ongeldig bedrag: %amount%"
+    positive_only: "Bedrag moet positief zijn."
+    deposit_ok: "%amount% toegevoegd aan %player%."
+    withdraw_ok: "%amount% verwijderd van %player%."

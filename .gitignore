@@ -1,0 +1,45 @@
+# ==============================================================================
+# Datos Sensibles y Credenciales
+# ==============================================================================
+# ¡NUNCA SUBIR EL .env! Contiene las contraseñas reales.
+.env
+
+# Ignorar archivos de secretos generados automáticamente (ej. Velocity forwarding)
+*.secret
+
+
+# Evitamos subir la base de datos completa de MariaDB
+mariadb-data/
+postgres-data/
+
+# Evitamos subir bases de datos locales incrustadas de plugins
+*.db
+*.sqlite
+*.mv.db
+
+# Evitamos subir copias de seguridad pesadas
+backups/
+
+
+# Ignorar todas las carpetas de mundos (world, world_nether, world_the_end, etc) en cualquier subdirectorio
+**/world*/
+
+# Ignorar registros y reportes de errores
+**/logs/
+**/crash-reports/
+
+# No sincronizar inventarios, estadísticas ni avances de los jugadores
+**/playerdata/
+**/stats/
+**/advancements/
+**/userdata/
+**/ClaimData/
+
+# Ignorar archivos locales de gestión de usuarios en servidores de Backend
+**/usercache.json
+**/banned-*.json
+**/ops.json
+**/whitelist.json
+
+# Telemetría de bStats
+**/bStats/

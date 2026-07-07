@@ -1,0 +1,86 @@
+name: Deploy Minecraft Network
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout del código para analizarlo
+      - name: Checkout del código
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Necesario para detectar archivos cambiados correctamente
+
+      # 2. Detección Inteligente de Cambios (Smart Restarts)
+      - name: Detectar cambios por servicio
+        id: changed-files
+        uses: tj-actions/changed-files@v44
+        with:
+          files_yaml: |
+            proxy:
+              - proxy-data/**
+            lobby:
+              - data/**
+            survival:
+              - survival-data/**
+            creative:
+              - creative-data/**
+            compose:
+              - docker-compose.yml
+              - .env.example
+
+      # 3. Conexión segura a tu red privada VPN
+      - name: Conectar a Tailscale
+        uses: tailscale/github-action@v2
+        with:
+          oauth-client-id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
+          oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
+          tags: tag:ci
+
+      # 4. Despliegue en el VPS vía SSH sobre Tailscale
+      # REQUISITO: El VPS necesita una Deploy Key (ed25519) registrada en GitHub
+      # para poder hacer git pull de un repositorio privado de forma autónoma.
+      - name: Sincronizar y Reiniciar
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VPS_TAILSCALE_IP }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22
+          script: |
+            cd /root/servidor-docker
+            
+            # El VPS asume que tiene una Deploy Key configurada para leer el repo privado
+            git pull origin main
+            
+            # --- Lógica de Reinicios Inteligentes (docker compose v2) ---
+            
+            if [ "${{ steps.changed-files.outputs.compose_any_changed }}" == "true" ]; then
+              echo "¡Cambios globales detectados! Aplicando docker compose up -d..."
+              docker compose up -d
+            fi
+            
+            if [ "${{ steps.changed-files.outputs.proxy_any_changed }}" == "true" ]; then
+              echo "¡Cambios en el Proxy! Reiniciando proxy-central..."
+              docker compose restart proxy-central
+            fi
+            
+            if [ "${{ steps.changed-files.outputs.lobby_any_changed }}" == "true" ]; then
+              echo "¡Cambios en el Lobby! Reiniciando servidor-lobby..."
+              docker compose restart servidor-lobby
+            fi
+            
+            if [ "${{ steps.changed-files.outputs.survival_any_changed }}" == "true" ]; then
+              echo "¡Cambios en el Survival! Reiniciando servidor-survival..."
+              docker compose restart servidor-survival
+            fi
+            
+            if [ "${{ steps.changed-files.outputs.creative_any_changed }}" == "true" ]; then
+              echo "¡Cambios en el Creativo! Reiniciando servidor-creative..."
+              docker compose restart servidor-creative
+            fi
