@@ -55,6 +55,9 @@ jobs:
             # El VPS asume que tiene una Deploy Key configurada para leer el repo privado
             git pull origin main
             
+            # Arreglar permisos automáticamente para los contenedores (Problema 1000:1000)
+            chown -R 1000:1000 data survival-data creative-data proxy-data 2>/dev/null || true
+            
             # --- Lógica de Reinicios Inteligentes (docker compose v2) ---
             
             if [ "${{ steps.changed-files.outputs.compose_any_changed }}" == "true" ]; then
