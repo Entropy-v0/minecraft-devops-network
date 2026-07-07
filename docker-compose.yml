@@ -85,7 +85,7 @@ services:
     image: itzg/mc-backup
     container_name: lobby-backup
     depends_on:
-      - mc-lobbyew
+      - mc-lobby
     environment:
       BACKUP_INTERVAL: "12h"  
       PRUNE_BACKUPS_DAYS: "7"
