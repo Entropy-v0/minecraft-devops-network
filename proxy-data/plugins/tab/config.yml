@@ -83,36 +83,30 @@ scoreboard:
   delay-on-join-milliseconds: 0
   scoreboards:
     scoreboard-1.20.3+:
-      title: "<#E0B11E>MyServer</#FF0000>"
+      title: "<gradient:#11998e:#38ef7d><bold>SHADOW GARDEN</bold></gradient>"
       display-condition: "%player-version-id%>=765;%bedrock%=false" # Only display it to players using 1.20.3+ AND NOT bedrock edition
       lines:
-        - "&7%date%"
-        - "%animation:MyAnimation1%"
-        - "&6Online:"
-        - "* &eOnline&7:||%online%"
-        - "* &eCurrent World&7:||%worldonline%"
-        - "* &eStaff&7:||%staffonline%"
+        - "<gradient:#11998e:#38ef7d>&m                              </gradient>"
+        - "&7Red:"
+        - " &8▪ &7Servidor&8:||<#38ef7d>%server%"
+        - " &8▪ &7Jugadores&8:||<#38ef7d>%online%"
         - ""
-        - "&6Personal Info:"
-        - "* &bRank&7:||%group%"
-        - "* &bPing&7:||%ping%&8ms"
-        - "* &bWorld&7:||%world%"
-        - "%animation:MyAnimation1%"
+        - "&7Tu Perfil:"
+        - " &8▪ &7Rango&8:||<#38ef7d>%group%"
+        - " &8▪ &7Ping&8:||<#38ef7d>%ping% &7ms"
+        - "<gradient:#11998e:#38ef7d>&m                              </gradient>"
     scoreboard:
-      title: "<#E0B11E>MyServer</#FF0000>"
+      title: "<gradient:#11998e:#38ef7d><bold>SHADOW GARDEN</bold></gradient>"
       lines:
-        - "&7%date%"
-        - "%animation:MyAnimation1%"
-        - "&6Online:"
-        - "* &eOnline&7: &f%online%"
-        - "* &eCurrent World&7: &f%worldonline%"
-        - "* &eStaff&7: &f%staffonline%"
+        - "<gradient:#11998e:#38ef7d>&m                              </gradient>"
+        - "&7Red:"
+        - " &8▪ &7Servidor&8: <#38ef7d>%server%"
+        - " &8▪ &7Jugadores&8: <#38ef7d>%online%"
         - ""
-        - "&6Personal Info:"
-        - "* &bRank&7: &f%group%"
-        - "* &bPing&7: &f%ping%&8ms"
-        - "* &bWorld&7: &f%world%"
-        - "%animation:MyAnimation1%"
+        - "&7Tu Perfil:"
+        - " &8▪ &7Rango&8: <#38ef7d>%group%"
+        - " &8▪ &7Ping&8: <#38ef7d>%ping% &7ms"
+        - "<gradient:#11998e:#38ef7d>&m                              </gradient>"
 
 # https://github.com/NEZNAMY/TAB/wiki/Feature-guide:-Layout
 layout:
