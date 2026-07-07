@@ -38,13 +38,10 @@ jobs:
       - name: Conectar a Tailscale
         uses: tailscale/github-action@v2
         with:
-          oauth-client-id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
-          oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
-          tags: tag:ci
+          authkey: ${{ secrets.TAILSCALE_AUTHKEY }}
 
       # 4. Despliegue en el VPS vía SSH sobre Tailscale
-      # REQUISITO: El VPS necesita una Deploy Key (ed25519) registrada en GitHub
-      # para poder hacer git pull de un repositorio privado de forma autónoma.
+      # (Al ser un repositorio público, el VPS puede hacer git pull directamente sin necesidad de llaves o contraseñas)
       - name: Sincronizar y Reiniciar
         uses: appleboy/ssh-action@v1.0.3
         with:
