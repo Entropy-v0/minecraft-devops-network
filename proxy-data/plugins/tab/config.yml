@@ -92,7 +92,7 @@ scoreboard:
         - " &8▪ &7Jugadores&8:||<#38ef7d>%online%"
         - ""
         - "&7Tu Perfil:"
-        - " &8▪ &7Rango&8:||<#38ef7d>%group%"
+        - " &8▪ &7Dinero&8:||<#38ef7d>$%vault_eco_balance%"
         - " &8▪ &7Ping&8:||<#38ef7d>%ping% &7ms"
         - "<gradient:#11998e:#38ef7d>&m                              </gradient>"
     scoreboard:
@@ -104,7 +104,7 @@ scoreboard:
         - " &8▪ &7Jugadores&8: <#38ef7d>%online%"
         - ""
         - "&7Tu Perfil:"
-        - " &8▪ &7Rango&8: <#38ef7d>%group%"
+        - " &8▪ &7Dinero&8: <#38ef7d>$%vault_eco_balance%"
         - " &8▪ &7Ping&8: <#38ef7d>%ping% &7ms"
         - "<gradient:#11998e:#38ef7d>&m                              </gradient>"
 
