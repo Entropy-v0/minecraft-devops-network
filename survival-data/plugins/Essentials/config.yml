@@ -783,9 +783,7 @@ world-home-permissions: false
 # Remember, they must have BOTH permission nodes in order to be able to set multiple homes.
 # For more information, visit https://wiki.ess3.net/wiki/Multihome
 sethome-multiple:
-  default: 3
-  vip: 5
-  staff: 10
+  default: 20
 
 # Controls whether players need the permission 'essentials.home.compass' in order to point
 # the player's compass toward their first home.
@@ -837,7 +835,7 @@ max-money: 10000000000000
 # Set the minimum amount of money a player can have (must be greater than the negative value of max-money).
 # Setting this to 0 will disable overdrafts/loans completely.
 # Players need 'essentials.eco.loan' permission to have a negative balance.
-min-money: -10000
+min-money: 0.0
 
 # Enable this to log all interactions with buy/sell/trade signs and the sell command.
 economy-log-enabled: false
