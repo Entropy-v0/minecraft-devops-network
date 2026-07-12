@@ -43,3 +43,9 @@ backups/
 
 # Telemetría de bStats
 **/bStats/
+
+// Ignorar archivos de configuración de IDEs y editores
+.idea/
+
+documentacion/
+
