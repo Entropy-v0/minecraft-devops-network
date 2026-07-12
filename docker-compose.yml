@@ -33,6 +33,7 @@ services:
     environment:
       EULA: "TRUE"
       TYPE: "VELOCITY"
+      VELOCITY_VERSION: "3.5.0-SNAPSHOT"
       MEMORY: "1024M"
       TZ: "America/Caracas"
     volumes:
